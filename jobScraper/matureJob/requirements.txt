@@ -1,0 +1,6 @@
+flask
+motor
+playwright
+pymongo
+python-dotenv
+aiohttp
