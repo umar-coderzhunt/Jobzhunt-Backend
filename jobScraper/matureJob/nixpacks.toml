@@ -3,10 +3,11 @@ nixPkgs = ["python311", "gcc"]
 
 [phases.build]
 cmds = [
-  "pip install --upgrade pip",
+  "python3.11 -m venv venv",
+  ". venv/bin/activate",
   "pip install -r requirements.txt",
   "python -m playwright install chromium"
 ]
 
 [phases.start]
-cmd = "python main.py"
+cmd = "venv/bin/python main.py"
