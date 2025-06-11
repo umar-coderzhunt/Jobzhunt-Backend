@@ -1,13 +1,12 @@
 [phases.setup]
-nixPkgs = ["python3", "gcc"]
+nixPkgs = ["python311", "gcc"]
 
 [phases.build]
 cmds = [
-  "python3 -m venv venv",
-  ". venv/bin/activate",
+  "pip install --upgrade pip",
   "pip install -r requirements.txt",
   "python -m playwright install chromium"
 ]
 
 [phases.start]
-cmd = ". venv/bin/activate && python main.py"
+cmd = "python main.py"
